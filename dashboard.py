@@ -275,7 +275,6 @@ def make_radar(data):
         legend=dict(bgcolor="rgba(0,0,0,0)"),
         margin=dict(l=30,r=30,t=40,b=30),
         title=dict(text="Overall performance radar (normalised)", font=dict(color="#a5f3c4", size=12)),
-        paper_bgcolor="rgba(0,0,0,0)",
     )
     return fig
 
