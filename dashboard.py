@@ -45,15 +45,17 @@ AXIS_STYLE = dict(gridcolor="#191c28", linecolor="#1e2130", tickcolor="#1e2130",
 # ─── Data Loading ─────────────────────────────────────────────────────────────
 @st.cache_data
 def load_defaults():
+    import os
+    base = os.path.dirname(os.path.abspath(__file__))
     paths = {
-        "GWO": "gwo_federated_logs.xls",
-        "PSO": "fed_pso_effnetb0_logs.xls",
-        "ABC": "fed_logs_abc_optimizer.xls",
+        "GWO": os.path.join(base, "gwo_federated_logs.xls"),
+        "PSO": os.path.join(base, "fed_pso_effnetb0_logs.xls"),
+        "ABC": os.path.join(base, "fed_logs_abc_optimizer.xls"),
     }
     out = {}
-    for opt, fname in paths.items():
+    for opt, fpath in paths.items():
         try:
-            df = pd.read_csv(fname)
+            df = pd.read_csv(fpath)
             out[opt] = standardize(df, opt)
         except Exception:
             out[opt] = None
