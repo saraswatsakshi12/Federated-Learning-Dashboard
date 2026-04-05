@@ -207,11 +207,12 @@ def make_drone_heatmap(df, opt):
         hovertemplate="Round %{x} — %{y}: loss %{z:.4f}<extra></extra>",
         colorbar=dict(tickfont=dict(color="#9ca3af", family="IBM Plex Mono", size=10))
     ))
-    fig.update_layout(**CHART_BASE,
+    heatmap_layout = {**CHART_BASE}
+    heatmap_layout["margin"] = dict(l=70, r=10, t=36, b=10)
+    fig.update_layout(**heatmap_layout,
         title=dict(text=f"{opt} — per-drone loss heatmap", font=dict(color="#a5f3c4", size=12)),
         xaxis=dict(title="Round", **AXIS_STYLE, dtick=1),
         yaxis=dict(**AXIS_STYLE),
-        margin=dict(l=70, r=10, t=36, b=10),
     )
     return fig
 
