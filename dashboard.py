@@ -165,7 +165,7 @@ def make_cost(data, smooth):
             x=df["round"], y=y, name=opt, mode="lines+markers",
             marker=dict(size=5, color=OPT_COLORS[opt]),
             line=dict(color=OPT_COLORS[opt], width=2, dash="dot"),
-            hovertemplate=f"<b>{opt}</b> Rd %{{x}} — cost {{}:.4f}<extra></extra>"
+            hovertemplate=f"<b>{opt}</b> Rd %{{x}} — cost %{{y:.4f}}<extra></extra>"
         ))
     fig.update_layout(**CHART_BASE,
         title=dict(text="Average system cost per round", font=dict(color="#a5f3c4", size=12)),
