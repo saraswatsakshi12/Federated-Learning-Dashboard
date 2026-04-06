@@ -1,5 +1,4 @@
 # Federated Learning Optimizer Comparison Dashboard
-### Sakshi Saraswat | Research Internship, NIT Delhi 2025 | GWECA, Ajmer
 
 An interactive Streamlit dashboard visualizing real experimental results comparing **GWO**, **PSO**, and **ABC** optimizers in a decentralized federated learning setup with fog-cloud simulation.
 
